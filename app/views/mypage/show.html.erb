@@ -2,3 +2,13 @@
 
 <p>id: <%= @user.id %></p>
 <p>username: <%= @user.username %></p>
+
+<% if @user_jobs.empty? %>
+	<p> まだ </p>
+<% else %>
+	<% @user_jobs.each do |user_job| %>
+		<p><%= user_job.name %></p>
+		<p><%= user_job.payment %></p>
+		<p>#####################</p>
+	<% end %>
+<% end %>
