@@ -1,2 +1,24 @@
 <h1>UserJobs#index</h1>
 <p>Find me in app/views/user_jobs/index.html.erb</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id </th>
+      <th>User_Id</th>
+      <th>Job_Id</th>
+      <th>User_Comment</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_jobs.each do |user_job| %>
+      <tr>
+        <td><%= user_job.id %></td>
+        <td><%= user_job.user_id %></td>
+        <td><%= user_job.job_id %></td>
+        <td><%= user_job.user_comment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

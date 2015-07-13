@@ -15,6 +15,7 @@
       <tr>
         <td><%= user.id %></td>
         <td><%= user.username %></td>
+        <td><%= link_to "Show", mypage_path(user) %></td>
       </tr>
     <% end %>
   </tbody>

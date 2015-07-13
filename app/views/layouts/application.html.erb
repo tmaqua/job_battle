@@ -14,8 +14,9 @@
       		Logged in as <strong><%= current_user.username %></strong>.
       		<%= link_to 'プロフィール変更', edit_user_registration_path %> |
       		<%= link_to "ログアウト", destroy_user_session_path, method: :delete %> |
-          <%= link_to 'mypage', mypage_path(current_user.id) %> |
-          <%= link_to 'jobs', jobs_path %>
+          <%= link_to 'マイページ', mypage_path(current_user.id) %> |
+          <%= link_to '仕事一覧', jobs_path %> |
+          <%= link_to '登録した仕事一覧', user_jobs_path %>
       	<% else %>
       		<%= link_to "サインアップ", new_user_registration_path %> |
       		<%= link_to "ログイン", new_user_session_path %>

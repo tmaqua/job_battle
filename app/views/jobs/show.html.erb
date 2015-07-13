@@ -1,5 +1,17 @@
 <h1>Jobs#show</h1>
 
-<p><%= @job.id %></p>
-<p><%= @job.name %></p>
-<p><%= @job.payment %></p>
+<p>id: <%= @job.id %></p>
+<p>name: <%= @job.name %></p>
+<p>payment: <%= @job.payment %></p>
+
+<% if @user_job %>
+	<p>###################</p>
+	<p>id: <%= @user_job.id %></p>
+	<p>user_id: <%= @user_job.user_id %></p>
+	<p>job_id: <%= @user_job.job_id %></p>
+	<p>comment: <%= @user_job.user_comment %></p>
+	<%= link_to "Edit Job", edit_user_job_path(@user_job) %>
+<% else %>
+	<p>###################</p>
+	<%= link_to "Add Job", new_user_jobs_path(@job) %>
+<% end %>

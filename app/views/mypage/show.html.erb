@@ -3,12 +3,16 @@
 <p>id: <%= @user.id %></p>
 <p>username: <%= @user.username %></p>
 
+<p>#####################</p>
 <% if @user_jobs.empty? %>
 	<p> まだ </p>
 <% else %>
 	<% @user_jobs.each do |user_job| %>
-		<p><%= user_job.name %></p>
-		<p><%= user_job.payment %></p>
+		<p>id: <%= user_job.id %></p>
+		<p>user_id: <%= user_job.user_id %></p>
+		<p>job_id: <%= user_job.job_id %></p>
+		<p>user_comment: <%= user_job.user_comment %></p>
+		<%= link_to "Edit Job", edit_user_job_path(user_job) %>
 		<p>#####################</p>
 	<% end %>
 <% end %>

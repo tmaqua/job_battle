@@ -53,6 +53,7 @@ class JobsController < ApplicationController
 	private
 		# Use callbacks to share common setup or constraints between actions.
 		def set_job
+			@user_job = UserJob.find_by(user_id: current_user.id, job_id: params[:id])
 			@job = Job.find(params[:id])
 		end
 
